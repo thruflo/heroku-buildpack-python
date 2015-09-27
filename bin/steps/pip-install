@@ -8,6 +8,9 @@ puts-step "Installing dependencies with pip"
 [ ! "$FRESH_PYTHON" ] && bpwatch start pip_install
 [ "$FRESH_PYTHON" ] && bpwatch start pip_install_first
 
+/app/.heroku/python/bin/pip install -U pip
+/app/.heroku/python/bin/pip install setuptools==0.8
+/app/.heroku/python/bin/pip install setuptools_git==1.1
 /app/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --allow-all-external  | cleanup | indent
 
 # Smart Requirements handling
