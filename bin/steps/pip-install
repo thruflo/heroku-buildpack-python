@@ -8,6 +8,7 @@ puts-step "Installing dependencies with pip"
 /app/.heroku/python/bin/pip install setuptools==18.1
 /app/.heroku/python/bin/pip install setuptools_git==1.1
 /app/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir | cleanup | indent
+/app/.heroku/python/bin/pip install pip install -e .
 
 # Smart Requirements handling
 cp requirements.txt .heroku/python/requirements-declared.txt
